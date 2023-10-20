@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+    <h1>Framingham Coronary Heart Disease Prediction App</h1>  
+
+    <form method="post" action="/predict" id="prediction-form">
+        <label for="currentSmoker">Current Smoker:</label>
+        <input type="number" name="currentSmoker" step="0.0001" required><br>
+        
+        <label for="BPMeds">BP Medications:</label>
+        <input type="number" name="BPMeds" step="0.0001" required><br>
+        
+        <label for="prevalentStroke">Prevalent Stroke:</label>
+        <input type="number" name="prevalentStroke" step="0.0001" required><br>
+        
+        <label for="prevalentHyp">Prevalent Hypertension:</label>
+        <input type="number" name="prevalentHyp" step="0.0001" required><br>
+        
+        <label for="diabetes">Diabetes:</label>
+        <input type="number" name="diabetes" step="0.0001" required><br>
+        
+        <label for="Gender">Gender:</label>
+        <input type="number" name="Gender" step="0.0001" required><br>
+        
+        <label for="Scaled_age">Scaled Age:</label>
+        <input type="number" name="Scaled_age" step="0.0001" required><br>
+        
+        <label for="Scaled_education">Scaled Education:</label>
+        <input type="number" name="Scaled_education" step="0.0001" required><br>
+        
+        <label for="Scaled_CigsPerDay">Scaled Cigarettes Per Day:</label>
+        <input type="number" name="Scaled_CigsPerDay" step="0.0001" required><br>
+       
+        <label for="Scaled_totChol">Scaled Total Cholestrol:</label>
+        <input type="number" name="Scaled_totChol" step="0.0001" required><br>
+        
+        <label for="Scaled_sysBP">Scales SysBP:</label>
+        <input type="number" name="Scaled_sysBP" step="0.0001" required><br>
+       
+        <label for="Scaled_diaBP">Scaled DiaBP:</label>
+        <input type="number" name="Scaled_diaBP" step="0.0001" required><br>
+       
+        <label for="Scaled_BMI">Scaled BMI:</label>
+        <input type="number" name="Scaled_BMI" step="0.0001" required><br>
+       
+        <label for="Scaled_heartRate">Scaled Heart Rate:</label>
+        <input type="number" name="Scaled_heartRate" step="0.0001" required><br>
+        
+        <label for="Scaled_glucose">Scaled Glucose:</label>
+        <input type="number" name="Scaled_glucose" step="0.0001" required><br>
+       
+        <input type="submit" value="Predict">
+        <input type="button" value="Clear" onclick="clearForm()" style="background-color: #333; color: #fff; border: none; border-radius: 5px;">
+    </form>
+    <div class="result">
+        <p>Prediction: {{ prediction }}</p>
+    </div>
+
+    <script>
+
+        <!-- Clear Button Script -->
+        function clearForm() {
+            // Clear form fields by resetting the form
+            document.getElementById("prediction-form").reset();
+            
+            // Clear the prediction result
+            document.querySelector(".result p").textContent = "Prediction: ";
+        }
+    </script>
+
+</body>
+</html>
