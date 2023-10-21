@@ -11,7 +11,7 @@ one-page design with a lot of color, a bit of animation, and an additional "gene
 (because hey, even one-page sites usually need an interior page or two). Hope you dig it :)
 
 Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+you can use for pretty much whatever
 
 (* = not included)
 
